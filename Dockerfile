@@ -15,7 +15,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-RUN go build -o main .
+RUN CGO_ENABLED=0 go build -o main .
 
 # Use the official debian image as a base image
 FROM debian:buster-slim
